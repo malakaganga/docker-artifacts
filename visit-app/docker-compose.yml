@@ -1,0 +1,14 @@
+version: '3'
+services:
+  redis-server:
+    image: 'redis'
+  mi-server:
+    restart: always
+    image: 'visitcounter'
+    ports:
+      - "8290:8290"
+  node-app:
+    restart: always
+    build: ./
+    ports:
+      - "8082:8082"
